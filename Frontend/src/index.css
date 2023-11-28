@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,12 +6,27 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.login-image {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: 200px;
+  height: auto;
+}
+
+.login-label {
+    font-family:'Bubblegum Sans';
+    font-size: 24px;
+    color: #CF9FFF; /* Or any other color that suits your design */
 }
 
 a {
