@@ -3,6 +3,7 @@ package ie.tcd.scss.studybot.domain;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Account {
@@ -15,14 +16,18 @@ public class Account {
 
     @Column
     private String username;
+    
+    @Column
+    private String password;
 
     @OneToMany
-    private ArrayList<Module> modules;
+    private List<Module> modules;
 
-    public Account(String email, String name, String username, ArrayList<Module> modules) {
+    public Account(String email, String name, String username, String password, List<Module> modules) {
         this.email = email;
         this.name = name;
         this.username = username;
+        this.password = password;
         this.modules = modules;
     }
 
@@ -45,6 +50,14 @@ public class Account {
         this.name = name;
     }
 
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -53,11 +66,11 @@ public class Account {
         this.username = username;
     }
 
-    public ArrayList<Module> getModules() {
+    public List<Module> getModules() {
         return modules;
     }
 
-    public void setModules(ArrayList<Module> modules) {
-        this.modules = modules;
+    public void setModules(List<Module> modules2) {
+        this.modules = modules2;
     }
 }
