@@ -15,14 +15,18 @@ public class Account {
 
     @Column
     private String username;
+    
+    @Column
+    private String password;
 
     @OneToMany
     private ArrayList<Module> modules;
 
-    public Account(String email, String name, String username, ArrayList<Module> modules) {
+    public Account(String email, String name, String username, String password, ArrayList<Module> modules) {
         this.email = email;
         this.name = name;
         this.username = username;
+        this.password = password;
         this.modules = modules;
     }
 
@@ -43,6 +47,14 @@ public class Account {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public String getUsername() {
