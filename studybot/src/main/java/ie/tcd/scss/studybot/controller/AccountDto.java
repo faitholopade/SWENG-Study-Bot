@@ -1,65 +1,55 @@
 package ie.tcd.scss.studybot.controller;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import ie.tcd.scss.studybot.domain.Account;
 import ie.tcd.scss.studybot.domain.Module;
 
 public class AccountDto {
 
-    private String email;
-    private String name;
-    private String username;
-    private String password;
-    private ArrayList<Module> modules;  
+    private Account account;
 
     public AccountDto(Account account) {
-        this.email = account.getEmail();
-        this.name = account.getName();
-        this.username = account.getUsername();
-        this.password = account.getPassword();
+        this.account = account;
     }
 
-    public AccountDto(String email, String name, String username, String password) {
-        this.email = email;
-        this.name = name;
-        this.username = username;
-        this.password = password;
-    }
-    
     protected AccountDto() {
     }
 
+    public Account getAccount(){
+        return account;
+    }
     public String getEmail() {
-        return email;
+        return account.getEmail();
     }
 
     public String getName() {
-        return name;
+        return account.getName();
     }
 
     public String getUsername(){
-        return username;
+        return account.getUsername();
     }
 
     public String getPassword(){
-        return password;
+        return account.getPassword();
     }
 
-    public String setPassword(String password){
-        return this.password = password;
+    public void setPassword(String password){
+        account.setPassword(password);
     }
 
-    public ArrayList<Module> getModules(){
-        return modules;
+    public List<Module> getModules(){
+        return account.getModules();
     }
 
-    public void setModules(ArrayList<Module> modules){
-        this.modules = modules;
+    public void setModules(List<Module> modules){
+        this.account.setModules(modules);
     }
 
     public boolean loginAccount(String username, String password){
-        if (this.username.equals(username) && this.password.equals(password)){
+        if (account.getUsername().equals(username) && account.getPassword().equals(password)){
             return true;
         }
         return false;

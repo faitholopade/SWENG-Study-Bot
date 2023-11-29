@@ -23,12 +23,23 @@ public class AccountService {
     }
 
     public Account createAccount(String email, String name, String username, String password) {
-        return accountRepository.save(new Account(email, name, username, password, new ArrayList<Module>()));
+        return accountRepository.save(new Account(email, name, username, password, new ArrayList<>()));
     }
 
     public Account getAccount(String email) {
         Optional<Account> account = accountRepository.findById(email);
         return account.orElse(null);
+    }
+
+    public boolean loginAccount(String email, String password){
+        Optional<Account> account = accountRepository.findById(email);
+        if (account.isPresent()){
+            Account acc = account.get();
+            if (acc.getPassword().equals(password)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }
