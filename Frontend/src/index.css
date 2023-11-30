@@ -115,6 +115,48 @@ input:focus{
     color: #CF9FFF; /* Or any other color that suits your design */
     margin-left: 22px;
 }
+.register-form {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 340px; /* Example fixed width */
+    /* Additional styles */
+}
+
+.register {
+    border-radius: 7px;
+    border: 1px solid #CF9FFF;
+    font-size: 24px;
+    background-color: white;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    cursor: pointer;
+    transition: width 0.3s ease; /* Smooth transition for width */
+    /* Add any additional styling as needed */
+}
+
+.register:hover {
+    width: 340px; /* Same width as .register-form */
+}
+
+.register:hover .register-form {
+    display: block;
+}
+.regH:hover {
+background-color:#CF9FFF;
+color: white;
+}
+.regS:hover {
+background-color: white;
+color: #CF9FFF;
+}
 
 a {
   font-weight: 500;
