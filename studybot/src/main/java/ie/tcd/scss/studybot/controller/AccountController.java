@@ -24,7 +24,7 @@ public class AccountController {
     public ResponseEntity<String> createAccount(@RequestBody AccountDto accountDto){
         Account account = accountDto.getAccount();
         accountService.createAccount(account.getEmail(), account.getName(), account.getUsername(), account.getPassword());
-        return ResponseEntity.ok("Account created successfully");
+        return ResponseEntity.ok("Account created successfully: " + account.getEmail());
         
     }
 
@@ -32,7 +32,12 @@ public class AccountController {
     @ResponseStatus(HttpStatus.OK)
     public boolean loginAccount(@RequestBody AccountDto accountDto){
         Account account = accountDto.getAccount();
-        return accountService.loginAccount(account.getUsername(), account.getPassword());
+        Account realAccount = accountService.getAccount(account.getEmail());
+        String realPassword = realAccount.getPassword();
+        if (realPassword.equals(account.getPassword())){
+            return true;
+        }
+        return false;
     }
 
 }
