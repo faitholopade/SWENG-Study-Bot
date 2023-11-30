@@ -53,7 +53,7 @@ public class AccountService {
         return module;
     }
 
-    public void updateHighestAScore(String name, double highestScore) {
+    public void updateHighestScore(String name, double highestScore) {
         Optional<Module> module = moduleRepository.findById(name);
         if(module.isPresent()) {
             Module mod = module.get();

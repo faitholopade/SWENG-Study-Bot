@@ -40,4 +40,16 @@ public class AccountController {
         return false;
     }
 
+    @PostMapping("/addmodule")
+    public ResponseEntity<String> addModule(@RequestBody ModuleDto moduleDto, @RequestParam String email) {
+        Module module = accountService.addModule(email, moduleDto.getName(), moduleDto.getDescription());
+        return ResponseEntity.ok("Module added successfully: " + module.getName());
+    }
+
+    @PostMapping("/updatemodule")
+    public ResponseEntity<String> updateModule(@RequestBody ModuleDto moduleDto) {
+        accountService.updateHighestScore(moduleDto.getName(), moduleDto.getHighestScore());
+        return ResponseEntity.ok("Updated module successfully");
+    }
+
 }
