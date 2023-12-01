@@ -9,7 +9,16 @@ function App() {
 
   const handleAddModule = () => {
     if (newModuleName && newModuleDescription) {
-      setModules([...modules, { name: newModuleName, description: newModuleDescription, bestScore: null }]);
+      const newModule = {
+        name: newModuleName, 
+        description: newModuleDescription, 
+        bestScore: null
+      };
+      // Mimic sending data to backend
+      console.log('Sending data to backend:', newModule);
+      // Add module to the list
+      setModules([...modules, newModule]);
+      // Reset form fields
       setNewModuleName('');
       setNewModuleDescription('');
     }

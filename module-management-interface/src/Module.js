@@ -4,6 +4,11 @@ import './Module.css';
 function Module({ name, description, bestScore }) {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleGenerateQuiz = () => {
+    // Mimic generating a quiz for the module
+    console.log(`Generating quiz for module: ${name}`);
+  };
+
   return (
     <div className="module" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <div className="module-info">
@@ -16,7 +21,7 @@ function Module({ name, description, bestScore }) {
         )}
       </div>
       <div className="module-actions">
-        <button>Generate Quiz</button>
+        <button onClick={handleGenerateQuiz}>Generate Quiz</button>
       </div>
     </div>
   );

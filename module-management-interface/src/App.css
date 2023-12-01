@@ -1,40 +1,65 @@
+/* Use the same font and base styles as Login.jsx */
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+:root {
+  font-family: 'Bubblegum Sans', sans-serif;
+  color-scheme: light dark;
+  background-color: #D4F7FE;
+  color: rgba(0, 0, 0, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-header {
-  background-color: #282c34;
-  padding: 20px;
+  background-color: #CF9FFF;
   color: white;
-}
-
-.module-container {
-  max-width: 600px;
-  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  margin-bottom: 20px;
 }
 
-.module-form {
-  margin: 20px;
-  text-align: center;
+.module-container, .module-form {
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  width: 80%;
+  max-width: 600px;
 }
 
 .module-form input {
-  margin: 0 10px;
+  margin: 10px;
   padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+  border-radius: 5px;
+  border: 1px solid #DCDCDC;
+  width: 85%;
 }
 
 .module-form button {
-  padding: 8px 15px;
-  background-color: #4CAF50;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #CF9FFF;
   color: white;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
 }
 
 .module-form button:hover {
-  background-color: #45a049;
+  background-color: #C054FE;
 }
