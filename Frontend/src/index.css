@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+:root {
+  font-family: 'Bubblegum Sans';
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #D4F7FE;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.quiz-box {
+  background: linear-gradient(to right, #CF9FFF, #af77bd);
+  display: flex;
+  justify-content: center;
+  border-radius: 25px; /* Rounded borders */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 30px 50px; /* Padding inside the box */
+  margin: 20px; /* Margin around the box */
+  height: 87vh;
+}
+
+/* input{
+font-family:'Bubblegum Sans';
+border: 1px solid #DCDCDC;
+background-color: white;
+border-radius: 5px;
+color: black;
+padding: 10px 5px;
+width: 285px;
+
+}
+input:focus{
+    border: 1px solid black;
+    }
+
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  margin: 20px;
+  padding: 10px;
+  width: 300px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #CF9FFF;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+button:hover {
+  background-color: #C054FE;
+
+} */
