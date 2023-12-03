@@ -4,10 +4,11 @@ import { useState } from 'react';
 const QuizInfo = () => {
     const [questionAt, setQuestionAt] = useState(0);
     const [score, setScore] = useState(0);
+    const [quizStarted, setQuizStarted] = useState(false);
     const [quizFinished, setQuizFinished] = useState(false);
     const {question, options, answer} = questions[questionAt];
     const optionSelected = (option) => {
-        if (option === questions[questionAt].answer) {
+        if (option == questions[questionAt].answer) {
             setScore(score+1);
         }
         if (questionAt < questions.length-1) {
@@ -33,24 +34,33 @@ const QuizInfo = () => {
                     </div>
                 </div>
             </div>
-            {(!quizFinished) ? (
-                <div className="quiz-box">
-                    <div className="questions-completed">Question {questionAt+1} of {questions.length}:</div>
-                    <h3 className="question-text">{question}</h3>
-                    <div className='button-grid'>
-                        {questions[questionAt].options.map((option) => (
-                            <button className='answer-button' onClick={() => optionSelected(option)}>{option}</button>
-                        ))}
+            {(quizStarted) ? (
+                (!quizFinished) ? (
+                    <div className="quiz-box">
+                        <div className="questions-completed">Question {questionAt+1} of {questions.length}:</div>
+                        <h3 className="question-text">{question}</h3>
+                        <div className='button-grid'>
+                            {questions[questionAt].options.map((option) => (
+                                <button className='answer-button' onClick={() => optionSelected(option)}>{option}</button>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                ) : (
+                    <div className="quiz-box">
+                        <h3 className="question-text">Score: {score}/{questions.length}</h3>
+                    </div>
+                )
             ) : (
                 <div className="quiz-box">
-                    <h3 className="question-text">Score: {score}/{questions.length}</h3>
-                </div>
-            )}
+                    <h2>Quiz Topic</h2>
+                    <button className='start-button' onClick={() => setQuizStarted(true)}>Start!</button>
+                </div>)
+            }
             <img src="/images/quizbot mascot.png" alt="Description" className="login-image" />
 
+
         </div>
+
     );}
 
 
