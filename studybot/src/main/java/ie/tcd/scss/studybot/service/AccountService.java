@@ -42,4 +42,24 @@ public class AccountService {
         return false;
     }
 
+    public Module addModule(String email, String name, String description) {
+        Optional<Account> account = accountRepository.findById(email);
+        Module module = new Module(name, description, 0.0);
+        moduleRepository.save(module);
+        if(account.isPresent()) {
+            Account acc = account.get();
+            acc.getModules().add(module);
+        }
+        return module;
+    }
+
+    public void updateHighestScore(String name, double highestScore) {
+        Optional<Module> module = moduleRepository.findById(name);
+        if(module.isPresent()) {
+            Module mod = module.get();
+            mod.setHighestScore(highestScore);
+            moduleRepository.save(mod);
+        }
+    }
+
 }
