@@ -17,7 +17,7 @@ const QuizInfo = () => {
 
     const Timer = ({timeElapsed}) => {
         const [time, setTime] = useState(0);
-        const [maxTime, setMaxTime] = useState(20)
+        const [maxTime, setMaxTime] = useState(15)
         useEffect(() => {
             if (time <= maxTime) {
                 const interval = setInterval(() => {
@@ -31,7 +31,7 @@ const QuizInfo = () => {
             }
         }, [time]);
 
-        return <div className='timer-bar' style={{width: `${((time/maxTime)*100)}%`}}></div>;
+        return <div className='timer-bar' style={{width: `${100-((time/maxTime)*100)}%`}}></div>;
     };
     const nextQuestion = () => {
         if (questionAt < questions.length-1) {
@@ -88,7 +88,7 @@ const QuizInfo = () => {
             ) : (
                 <div className="quiz-box">
                     <h3 className="question-text">Quiz Topic</h3>
-                    <h3 className="question-text">Time per Question: 20s</h3>
+                    <h3 className="question-text">Time per Question: 15s</h3>
                     <h3 className="question-text">Number of Questions: {questions.length}</h3>
                     <button className='quiz-start-button' onClick={() => setQuizStarted(true)}>Start!</button>
                 </div>)
