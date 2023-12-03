@@ -10,7 +10,7 @@ public class ModuleDto {
         this.module = module;
     }
 
-    protected ModuleDto() {
+    public ModuleDto() {
 
     }
 
