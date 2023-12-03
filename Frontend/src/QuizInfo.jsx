@@ -18,6 +18,13 @@ const QuizInfo = () => {
         }
     };
 
+    const retry = () => {
+        setQuizStarted(false);
+        setQuizFinished(false);
+        setQuestionAt(0);
+        setScore(0);
+    }
+
     return (
         <div>
             <div className="top-banner">
@@ -47,7 +54,10 @@ const QuizInfo = () => {
                     </div>
                 ) : (
                     <div className="quiz-box">
-                        <h3 className="question-text">Score: {score}/{questions.length}</h3>
+                        <h3 className="question-text">Score: {(score/questions.length).toFixed(2)*100}%</h3>
+                        <h3 className="question-text">You got {score} of {questions.length} questions correct!</h3>
+                        <button className='start-button' onClick={() => retry()}>Try Again!</button>
+
                     </div>
                 )
             ) : (
