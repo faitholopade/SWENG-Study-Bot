@@ -1,7 +1,29 @@
-import {questions} from './questions';
+// import {questions} from './questions';
 import { useState , useEffect } from 'react';
-// import Timer from './Timer'
-const QuizInfo = () => {
+const QuizInfo = ({moduleName}) => {
+    const [questions, setQuestions] = useState(null);
+    useEffect(() => {
+        fetch(`http://localhost:8080/${moduleName}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setQuestions(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the registration operation:', error);
+            });
+    }, []);
+
+
     const [questionAt, setQuestionAt] = useState(0);
     const [score, setScore] = useState(0);
     const [quizStarted, setQuizStarted] = useState(false);

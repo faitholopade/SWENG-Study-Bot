@@ -3,7 +3,7 @@ import QuizInfo from './QuizInfo'
 
 function App() {
 
-    return <QuizInfo />;
+    return <QuizInfo moduleName = 'networks' />;
 }
 
 export default App
