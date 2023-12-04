@@ -17,6 +17,7 @@
 .quiz-box {
   display: flex;
   position: relative;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction:  column;
   align-items: center;
@@ -204,8 +205,8 @@ button {
   border: 3px solid rgb(130, 165, 172);
   margin-left: 20px;
   padding: 30px;
-  width: 425px;
-  height: 150px;
+  width: 325px;
+  height: 100px;
   margin-top: 35px;
   font-size: 2.5em;
   font-weight: 500;

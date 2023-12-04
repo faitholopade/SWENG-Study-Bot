@@ -47,6 +47,10 @@ const QuizInfo = () => {
         setScore(0);
     }
 
+    const exit = () => {
+        //return to main menu
+    }
+
     return (
         <div>
             <div className="top-banner">
@@ -82,6 +86,7 @@ const QuizInfo = () => {
                         <h3 className="question-text">Score: {(score/questions.length).toFixed(2)*100}%</h3>
                         <h3 className="question-text">You got {score} out of {questions.length} questions correct!</h3>
                         <button className='quiz-start-button' onClick={() => retry()}>Try Again!</button>
+                        <button className='quiz-start-button' onClick={() => exit()}>Exit</button>
 
                     </div>
                 )
