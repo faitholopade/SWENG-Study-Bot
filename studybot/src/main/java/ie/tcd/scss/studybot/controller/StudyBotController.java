@@ -12,9 +12,15 @@ import ie.tcd.scss.studybot.domain.AnswerFrom;
 import ie.tcd.scss.studybot.domain.Modules;
 import ie.tcd.scss.studybot.domain.PromptTo;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 @RestController
 @RequestMapping()
+@CrossOrigin(origins = "http://localhost:5173")
 public class StudyBotController {
+
 
     @Value("${openai.model}")
     private String AiModel;
