@@ -1,26 +1,21 @@
 // import {questions} from './questions';
 import { useState , useEffect } from 'react';
+import QuestionDS from './QuestionInterface'
 const QuizInfo = ({moduleName}) => {
-    const [questions, setQuestions] = useState(null);
+    const [questions, setQuestions] = useState([]);
+
     useEffect(() => {
-        fetch(`http://localhost:8080/${moduleName}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                setQuestions(data);
-            })
-            .catch(error => {
-                console.error('There was a problem with the registration operation:', error);
-            });
+        const fetchQuestions = async() => {
+            const res = await fetch(`http://localhost:8080/${moduleName}`);
+            const data = await res.json();
+            const structData = data.map((item) => ({
+                question: item.question,
+                options: item.options,
+                answer: item.answer
+            }));
+            setQuestions(structData);
+        }
+        fetchQuestions();
     }, []);
 
 
