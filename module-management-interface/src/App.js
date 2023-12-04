@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Module from './Module';
+import logo from './logo.png';
 
 function App() {
   const [modules, setModules] = useState([]);
@@ -10,15 +11,12 @@ function App() {
   const handleAddModule = () => {
     if (newModuleName && newModuleDescription) {
       const newModule = {
-        name: newModuleName, 
-        description: newModuleDescription, 
+        name: newModuleName,
+        description: newModuleDescription,
         bestScore: null
       };
-      // Mimic sending data to backend
       console.log('Sending data to backend:', newModule);
-      // Add module to the list
       setModules([...modules, newModule]);
-      // Reset form fields
       setNewModuleName('');
       setNewModuleDescription('');
     }
@@ -26,6 +24,20 @@ function App() {
 
   return (
     <div className="App">
+      <div className="top-banner">
+        Group 8 Quiz Bot
+        <div className="group-members">
+          Group Members
+          <div className="member-list">
+            <div>Faith</div>
+            <div>Mahir</div>
+            <div>Rohn</div>
+            <div>Sab</div>
+            <div>Milena</div>
+            <div>Dario</div>
+          </div>
+        </div>
+      </div>
       <header className="App-header"> 
         <h1>Module Management Interface</h1>
       </header>
@@ -49,6 +61,7 @@ function App() {
           <Module key={index} name={module.name} description={module.description} bestScore={module.bestScore} />
         ))}
       </div>
+      <img src={logo} alt="QuizBot Logo" className="App-logo" />
     </div>
   );
 }

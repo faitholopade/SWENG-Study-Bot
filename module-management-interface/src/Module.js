@@ -3,10 +3,15 @@ import './Module.css';
 
 function Module({ name, description, bestScore }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const handleGenerateQuiz = () => {
-    // Mimic generating a quiz for the module
+    setIsGenerating(true);
     console.log(`Generating quiz for module: ${name}`);
+    // Simulate API call delay
+    setTimeout(() => {
+      setIsGenerating(false);
+    }, 2000); // 2 seconds delay
   };
 
   return (
@@ -23,8 +28,10 @@ function Module({ name, description, bestScore }) {
       <div className="module-actions">
         <button onClick={handleGenerateQuiz}>Generate Quiz</button>
       </div>
+      {isGenerating && <div className="generating-popup">Generating quiz...</div>}
     </div>
   );
 }
+
 
 export default Module;
