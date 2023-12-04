@@ -1,4 +1,3 @@
-
 const questions = [
     {
         question: "Which is a characteristic of functional programming?",
