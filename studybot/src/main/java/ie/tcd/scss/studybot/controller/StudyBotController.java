@@ -26,7 +26,7 @@ public class StudyBotController {
     private RestTemplate template;
 
     @GetMapping("/{module}")
-    public String chat(@PathVariable String module){
+    public String study(@PathVariable String module){
         String modulePrompt = "";
         switch (module.toLowerCase()) {
             case "networks":
