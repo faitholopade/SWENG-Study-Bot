@@ -1,6 +1,7 @@
 import { useState , useEffect } from 'react';
 const QuizInfo = ({moduleName}) => {
     const [questions, setQuestions] = useState(null);
+    const [questionAt, setQuestionAt] = useState(0);
 
     useEffect(() => {
         const fetchQuestions = async () => {
@@ -10,9 +11,9 @@ const QuizInfo = ({moduleName}) => {
                     throw new Error('no network response');
                 }
                 const data = await res.json();
-                console.log(data)
-                if (questions == null)
+                if (questions == null && questionAt == 0) {
                     setQuestions(data);
+                }
             } catch (error) {
                 console.error('error fetching data:', error);
             }
@@ -21,7 +22,6 @@ const QuizInfo = ({moduleName}) => {
         fetchQuestions();
     }, []);
 
-    const [questionAt, setQuestionAt] = useState(0);
     const [score, setScore] = useState(0);
     const [quizStarted, setQuizStarted] = useState(false);
     const [quizFinished, setQuizFinished] = useState(false);
@@ -64,6 +64,10 @@ const QuizInfo = ({moduleName}) => {
         setQuestionAt(0);
         setScore(0);
     }
+    const capitalizeWord = (str) => {
+        return moduleName.charAt(0).toUpperCase() + str.slice(1);
+    };
+    const [moduleCap, setModuleCap] = useState(capitalizeWord(moduleName));
 
     const exit = () => {
         //return to main menu
@@ -110,7 +114,7 @@ const QuizInfo = ({moduleName}) => {
                 )
             ) : ( 
                 <div className="quiz-box">
-                    <h3 className="question-text">Quiz Topic</h3>
+                    <h3 className="question-text">{moduleCap} Quiz</h3>
                     <h3 className="question-text">Time per Question: 15s</h3>
                     <h3 className="question-text">Number of Questions: 4</h3>
                     {(questions != null) ? (   
@@ -118,7 +122,7 @@ const QuizInfo = ({moduleName}) => {
                         <button className='quiz-start-button' onClick={() => setQuizStarted(true)}>Start!</button>
                         
                         ) : (
-                        <h3 className='question-text'> Loading...</h3>
+                        <h3 className='questions-completed'> Loading...</h3>
                     )}
                 </div>)
             }
