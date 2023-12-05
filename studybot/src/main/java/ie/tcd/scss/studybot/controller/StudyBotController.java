@@ -2,6 +2,7 @@ package ie.tcd.scss.studybot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +12,6 @@ import org.springframework.web.client.RestTemplate;
 import ie.tcd.scss.studybot.domain.AnswerFrom;
 import ie.tcd.scss.studybot.domain.Modules;
 import ie.tcd.scss.studybot.domain.PromptTo;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping()
