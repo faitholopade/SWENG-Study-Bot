@@ -12,5 +12,6 @@ The tests are located at studybot\src\test\java\ie\tcd\scss\studybot and can be 
 [Diary](https://drive.google.com/file/d/1fed1bYikn0Zr-2zK1kcl4eiTY2WRj2wG/view?usp=sharing)
 
 ## Videos
-1. Frontend:
+1. [Frontend:](https://media.heanet.ie/page/7f29ce932c5945189f25c99351217548) https://media.heanet.ie/page/7f29ce932c5945189f25c99351217548
 2. [Backend:](https://media.heanet.ie/page/4abf05b1c0ba4b2d8053dd622e92de76) https://media.heanet.ie/page/4abf05b1c0ba4b2d8053dd622e92de76
+3. [Login: ](https://media.heanet.ie/page/2f1710b6a61f4599953e614027e3f039) https://media.heanet.ie/page/2f1710b6a61f4599953e614027e3f039
