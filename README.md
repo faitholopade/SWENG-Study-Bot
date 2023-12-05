@@ -13,4 +13,4 @@ The tests are located at studybot\src\test\java\ie\tcd\scss\studybot and can be 
 
 ## Videos
 1. Frontend:
-2. [Backend:](https://media.heanet.ie/page/4abf05b1c0ba4b2d8053dd622e92de76) 
+2. [Backend:](https://media.heanet.ie/page/4abf05b1c0ba4b2d8053dd622e92de76) https://media.heanet.ie/page/4abf05b1c0ba4b2d8053dd622e92de76
