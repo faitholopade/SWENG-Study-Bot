@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 import Module from './Module';
 import logo from './logo.png';
+import QuizInfo from './QuizInfo';
 
 function App() {
   const [modules, setModules] = useState([]);
   const [newModuleName, setNewModuleName] = useState('');
   const [newModuleDescription, setNewModuleDescription] = useState('');
+  const [selectedModule, setSelectedModule] = useState('');
 
   const handleAddModule = () => {
     if (newModuleName && newModuleDescription) {
@@ -58,10 +60,11 @@ function App() {
       </div>
       <div className="module-container">
         {modules.map((module, index) => (
-          <Module key={index} name={module.name} description={module.description} bestScore={module.bestScore} />
+          <Module key={index} name={module.name} description={module.description} bestScore={module.bestScore} onSelectModule={setSelectedModule} />
         ))}
       </div>
       <img src={logo} alt="QuizBot Logo" className="App-logo" />
+      {selectedModule && <QuizInfo module={selectedModule} />}
     </div>
   );
 }

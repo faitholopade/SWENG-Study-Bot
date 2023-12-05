@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Module.css';
 
-function Module({ name, description, bestScore }) {
+function Module({ name, description, bestScore, onSelectModule }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
 
