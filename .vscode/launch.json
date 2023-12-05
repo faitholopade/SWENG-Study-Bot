@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-StudybotApplication<studybot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ie.tcd.scss.studybot.StudybotApplication",
+            "projectName": "studybot",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
