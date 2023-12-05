@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #D4F7FE;
+  background-color: #D4F7FE; 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -38,80 +38,80 @@
     color:rgb(206, 202, 202);
   }
   .question-text {
-    font-size: 38px;
+    font-size: 36px;
     margin: 0px;
     color: #CF9FFF;
   }
 }
 .top-banner {
   background-color: white; /* Your chosen shade of purple */
-  color: #CF9FFF;
-  border-radius: 10px; /* Adjust the value to control the roundness */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family:'Bubblegum Sans';
-  font-size: 48px;
-  text-align: center;
-  padding: 20px 0; /* Adjust padding to your preference */
+      color: #CF9FFF;
+      border-radius: 10px; /* Adjust the value to control the roundness */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-family:'Bubblegum Sans';
+      font-size: 48px;
+      text-align: center;
+      padding: 20px 0; /* Adjust padding to your preference */
+  
+  
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+  }
+  
+  .timer-bar {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: linear-gradient(to right, #ff9ff5, #af31cf); 
+    height: 10px;
+    transition-duration: .1s;
+    width: 100%;
+    transition-timing-function: ease-out;
+  }
 
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.timer-bar {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  background: linear-gradient(to right, #ff9ff5, #af31cf);
-  height: 10px;
-  transition-duration: .1s;
-  width: 100%;
-  transition-timing-function: ease-out;
-}
-
-.group-members {
-  border-radius: 7px;
-  border: 1px solid #CF9FFF; /* Set the border style, width, and color */
-  font-size: 24px;
-  background-color: white;
-  position: absolute;
-  left: 10px;
-  top: 50%; /* Set top to 50% of parent's height */
-  transform: translateY(-50%); /* Shift upwards by half of its own height */
-  padding: 10px;
-  cursor: pointer;
-  /* Add any additional styling as needed */
+  .group-members {
+    border-radius: 7px;
+    border: 1px solid #CF9FFF; /* Set the border style, width, and color */
+    font-size: 24px;
+    background-color: white;
+    position: absolute;
+    left: 10px;
+    top: 50%; /* Set top to 50% of parent's height */
+    transform: translateY(-50%); /* Shift upwards by half of its own height */
+    padding: 10px;
+    cursor: pointer;
+    /* Add any additional styling as needed */
 }
 
 
 
 .member-list {
-  width: 100%;
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  /* Add any additional styling as needed */
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add any additional styling as needed */
 }
 
 .group-members:hover .member-list {
-  background-color: white;
-  display: block;
+    background-color: white;
+    display: block;
 }
 .LoginBox {
-  background-color: white; /* White background */
-  border-radius: 25px; /* Rounded borders */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  padding: 30px 50px; /* Padding inside the box */
-  margin: 20px; /* Margin around the box */
+    background-color: white; /* White background */
+    border-radius: 25px; /* Rounded borders */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 30px 50px; /* Padding inside the box */
+    margin: 20px; /* Margin around the box */
 }
 .login-image {
   position: fixed;
@@ -123,27 +123,27 @@
   height: auto;
 }
 input{
-  font-family:'Bubblegum Sans';
-  border: 1px solid #DCDCDC;
-  background-color: white;
-  border-radius: 5px;
-  color: black;
-  padding: 5px;
-  width: 285px;
+font-family:'Bubblegum Sans';
+border: 1px solid #DCDCDC;
+background-color: white;
+border-radius: 5px;
+color: black;
+padding: 5px;
+width: 285px;
 
 }
 input:focus{
-  border: 1px solid black;
-}
+    border: 1px solid black;
+    }
 
 .login-label {
-  display:flex;
-  flex-direction: column;
-  text-align: left;
-  font-family:'Bubblegum Sans';
-  font-size: 24px;
-  color: #CF9FFF; /* Or any other color that suits your design */
-  margin-left: 22px;
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    font-family:'Bubblegum Sans';
+    font-size: 24px;
+    color: #CF9FFF; /* Or any other color that suits your design */
+    margin-left: 22px;
 }
 
 a {
@@ -188,7 +188,7 @@ button {
   margin-left: 20px;
   padding: 30px;
   width: 425px;
-  height: 150px;
+  height: 135px;
   margin-top: 35px;
   font-size: 1.5em;
   font-weight: 500;
@@ -200,7 +200,7 @@ button {
 }
 
 .quiz-start-button {
-
+  
   border-radius: 8px;
   border: 3px solid rgb(130, 165, 172);
   margin-left: 20px;
@@ -216,7 +216,7 @@ button {
   transition: background-color 0.2s;
 }
 
-
+  
 button:hover {
   background-color: #C054FE;
 
