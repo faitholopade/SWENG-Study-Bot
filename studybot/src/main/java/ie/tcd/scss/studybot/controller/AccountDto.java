@@ -14,7 +14,7 @@ public class AccountDto {
         this.account = account;
     }
 
-    protected AccountDto() {
+    public AccountDto() {
     }
 
     public Account getAccount(){
@@ -53,6 +53,10 @@ public class AccountDto {
             return true;
         }
         return false;
+    }
+
+    public void setAccount(Account account2) {
+        this.account = account2;
     }
 
 
