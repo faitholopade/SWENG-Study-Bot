@@ -1,1 +1,1 @@
-hello
+To run: Run springboot inside studybot and then run npm run dev inside frontend directory.
